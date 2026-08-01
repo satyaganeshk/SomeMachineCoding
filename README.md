@@ -1,75 +1,153 @@
-# React + TypeScript + Vite
+# 🚀 Frontend Machine Coding Hub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A curated collection of **frontend machine coding challenges**, **production-ready React applications**, and **reusable UI components** built to sharpen frontend engineering skills and prepare for technical interviews.
 
-Currently, two official plugins are available:
+This repository is continuously updated with real-world projects covering state management, API integrations, dashboards, animations, performance optimization, and modern UI development.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- ⚛️ React
+- 📘 TypeScript
+- 🎨 Material UI
+- ⚡ Vite
+- 🗂️ Zustand
+- 🌐 REST APIs
+- 📦 React Router
+- 📊 Charts & Dashboards
+- 🧩 Reusable Components
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# 📂 Projects
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+| Project | Status | Description |
+|---------|:------:|------------|
+| ✅ Todo App | Completed | CRUD operations with local storage and filtering |
+| 🚧 Chat Application | In Progress | Real-time chat interface |
+| ⏳ Kanban Board | Planned | Drag & Drop task management |
+| ⏳ Data Table | Planned | Sorting, filtering, pagination & virtualization |
+| ⏳ Weather Dashboard | Planned | API integration with charts |
+| ⏳ GitHub Dashboard | Planned | GitHub profile analytics |
+| ⏳ Crypto Dashboard | Planned | CoinGecko API dashboard |
+| ⏳ Shopping Cart | Planned | E-commerce cart management |
+| ⏳ File Explorer | Planned | Recursive folder structure |
+| ⏳ Calendar | Planned | Events & scheduling |
+| ⏳ Notes App | Planned | Rich text notes |
+| ⏳ Music Player | Planned | Audio player with playlist |
+| ⏳ Image Gallery | Planned | Masonry layout & lazy loading |
+| ⏳ Infinite Scroll | Planned | Intersection Observer |
+| ⏳ Authentication UI | Planned | Login, Register & Protected Routes |
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# 🎯 What You'll Find
 
+- CRUD Applications
+- Dashboard UIs
+- Machine Coding Solutions
+- API Integrations
+- Reusable Components
+- Responsive Layouts
+- State Management
+- Performance Optimizations
+- Custom Hooks
+- React Patterns
+- TypeScript Best Practices
+- Modern UI/UX
+
+---
+
+# 📁 Folder Structure
+
+```text
+src/
+│
+├── components/
+├── pages/
+├── layouts/
+├── hooks/
+├── store/
+├── services/
+├── utils/
+├── assets/
+├── routes/
+└── types/
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# 🚀 Getting Started
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Clone the repository
 
+```bash
+git clone https://github.com/your-username/react-machine-coding-hub.git
 ```
+
+Navigate into the project
+
+```bash
+cd react-machine-coding-hub
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run the development server
+
+```bash
+npm run dev
+```
+
+---
+
+# 📸 Preview
+
+> Screenshots and GIFs will be added as more projects are completed.
+
+---
+
+# 🛣️ Roadmap
+
+- [x] Todo Application
+- [ ] Chat Application
+- [ ] Data Table
+- [ ] Calendar
+- [ ] Kanban Board
+- [ ] Weather Dashboard
+- [ ] GitHub Dashboard
+- [ ] Crypto Dashboard
+- [ ] Shopping Cart
+- [ ] File Explorer
+- [ ] Notes App
+- [ ] Music Player
+- [ ] Image Gallery
+- [ ] Infinite Scroll
+- [ ] Trello Clone
+- [ ] Notion Clone
+
+---
+
+# 🤝 Contributing
+
+Suggestions, improvements, and new project ideas are always welcome. Feel free to open an issue or submit a pull request.
+
+---
+
+# ⭐ Support
+
+If you found this repository useful, consider giving it a ⭐ to support the project.
+
+---
+
+## 👨‍💻 Author
+
+**Satya Ganesh Kamireddy**
+
+- LinkedIn: https://www.linkedin.com/in/satyaganeshkamireddy/
+- Portfolio: https://satya-portfolio-two-iota.vercel.app/
