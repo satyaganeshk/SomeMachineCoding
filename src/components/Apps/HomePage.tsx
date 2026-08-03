@@ -16,6 +16,7 @@ import {
   Grid,
   Stack,
   TextField,
+  Table,
 } from "@mui/material";
 
 import RocketLaunchRoundedIcon from "@mui/icons-material/RocketLaunchRounded";
@@ -24,7 +25,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 import ChecklistRoundedIcon from "@mui/icons-material/ChecklistRounded";
 import ChatRoundedIcon from "@mui/icons-material/ChatRounded";
-import CalendarMonthRoundedIcon from "@mui/icons-material/CalendarMonthRounded";
+import BackupTableIcon from '@mui/icons-material/BackupTable';
 
 const projects = [
   {
@@ -42,11 +43,11 @@ const projects = [
     path: "/chat-app",
   },
   {
-    title: "Calendar",
-    description: "Date Picker & Events",
-    icon: <CalendarMonthRoundedIcon color="success" />,
+    title: "Dashboard",
+    description: "Data Visualization, Charts, Tables",
+    icon: <BackupTableIcon color="success" />,
     difficulty: "Medium",
-    path: "/calendar",
+    path: "/dashboard",
   },
 ];
 

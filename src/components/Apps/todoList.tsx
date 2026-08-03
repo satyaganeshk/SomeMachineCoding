@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react";
-import {Snackbar, Alert, Checkbox} from "@mui/material";
+import {Checkbox} from "@mui/material";
 import {
   Box,
   Button,
@@ -14,6 +14,7 @@ import {
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import AddIcon from "@mui/icons-material/Add";
+import { useSnackbar } from "../helpers/useSnackbar";
 
 interface Todo {
   id: string;
@@ -24,10 +25,8 @@ interface Todo {
 const TodoList = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [inputValue, setInputValue] = useState("");
-  const [snackbarOpen, setSnackbarOpen] = useState(false);
-  const [snackbarMessage, setSnackbarMessage] = useState("");
-  const [snackbarSeverity, setSnackbarSeverity] = useState<"success" | "error">("success");
   const [showCompleted, setShowCompleted] = useState(false);
+  const { showSnackbar, snackbarElement } = useSnackbar();
 // store in the local storage
     useEffect(() => {
         const storedTodos = localStorage.getItem("todos");
@@ -48,18 +47,16 @@ const TodoList = () => {
             setTodos([...todos, newTodo]);
             setInputValue(""); // Clear the input field after adding
             localStorage.setItem("todos", JSON.stringify([...todos, newTodo]));
+            showSnackbar("Todo added.", "success");
         }else {
-
-            console.log("Input is empty. Todo not added.");
-            setSnackbarMessage("Input is empty. Todo not added.");
-            setSnackbarOpen(true);
-            setSnackbarSeverity("error");
+            showSnackbar("Please enter a todo.", "error");
         }
     };
     const onDeleteTodo = (index: number) => {
         const newTodos = [...todos];
         newTodos.splice(index, 1);
         setTodos(newTodos);
+        showSnackbar("Todo deleted.", "success");
         localStorage.setItem("todos", JSON.stringify(newTodos));
     };
 
@@ -85,7 +82,7 @@ const TodoList = () => {
       p: 3,
     }}
   >
-    <Card
+      <Card
       elevation={6}
       sx={{
         width: "100%",
@@ -151,9 +148,7 @@ const TodoList = () => {
           onClick={() => {
             setTodos([]);
             localStorage.removeItem("todos");
-            setSnackbarMessage("All todos deleted.");
-            setSnackbarSeverity("success");
-            setSnackbarOpen(true);
+            showSnackbar("All todos deleted.", "success");
             setShowCompleted(false);
           }}
           >
@@ -183,16 +178,18 @@ const TodoList = () => {
                   bgcolor: "grey.200",
                   },
                 }}
-                onClick={() => toggleTodoCompletion(index)}
               >
                 <Checkbox
                   checked={todo.completed}
-                  onChange={() => toggleTodoCompletion(index)}
+                  onChange={(e) =>{ 
+                    e.stopPropagation(),
+                    toggleTodoCompletion(index)
+                  }}
                 />
                 <ListItemText primary={todo.text} sx={{ textDecoration: todo.completed ? "line-through" : "none" }} />
                  <IconButton
                     color="error"
-                    onClick={() => onDeleteTodo(index)}
+                    onClick={(e) => { e.stopPropagation(); onDeleteTodo(index); }}
                   >
                     <DeleteIcon />
                   </IconButton>
@@ -200,26 +197,9 @@ const TodoList = () => {
             ))
           )}
         </List>
-
-        <Snackbar
-          open={snackbarOpen}
-          autoHideDuration={2000}
-          onClose={() => setSnackbarOpen(false)}
-          anchorOrigin={{
-            vertical: "bottom",
-            horizontal: "center",
-          }}
-        >
-          <Alert
-            severity={snackbarSeverity}
-            sx={{ width: "100%" }}
-            onClose={() => setSnackbarOpen(false)}
-          >
-            {snackbarMessage}
-          </Alert>
-        </Snackbar>
-      </CardContent>
-    </Card>
+        </CardContent>
+      </Card>
+      {snackbarElement}
   </Box>
 );
 }
