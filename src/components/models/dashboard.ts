@@ -31,7 +31,7 @@ export interface User {
 
 export interface Hair {
   color: string;
-  type: string;
+  type: string; 
 }
 
 export interface Address {
